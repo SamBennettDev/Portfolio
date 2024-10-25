@@ -1,5 +1,4 @@
 import { MainNavItem, NavItem } from "@/types/nav";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
   faContactBook,
   faFolder,
@@ -7,6 +6,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export const mainNav: MainNavItem[] = [
+  {
+    title: "Education",
+    href: "/Education",
+    icon: faHome,
+  },
   {
     title: "Projects",
     href: "/Projects",
@@ -22,15 +26,14 @@ export const mainNav: MainNavItem[] = [
     href: "/Contact",
     icon: faContactBook,
   },
-  {
-    title: "GitHub",
-    href: "https://github.com/SamBennettDev",
-    icon: faGithub,
-    external: true,
-  },
 ];
 
 export const appNav: NavItem[] = [
+  {
+    title: "Education",
+    href: "/Education",
+    icon: faHome,
+  },
   {
     title: "Home",
     href: "/",
@@ -45,11 +48,5 @@ export const appNav: NavItem[] = [
     title: "Contact",
     href: "/Contact",
     icon: faContactBook,
-  },
-  {
-    title: "GitHub",
-    href: "https://github.com/SamBennettDev",
-    icon: faGithub,
-    external: true,
   },
 ];

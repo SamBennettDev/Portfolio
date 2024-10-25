@@ -8,13 +8,13 @@ export function DesktopNav() {
 
   return (
     <nav
-      className={` justify-between items-center mx-[20px] hidden md:flex`}
+      className={`justify-between items-center px-[40px] m-auto hidden md:flex bg-card`}
       style={{ height: `${navbarHeight}px` }}
     >
       <div className="flex gap-[10px]">
         <Link to="/" className="flex items-center justify-center mr-[10px]">
-          <div className="font-bold">React</div>
-          <div className="">Essentials</div>
+          <div className="font-bold">Sam</div>
+          <div className="">Bennett</div>
         </Link>
         {mainNav.map((navItem, index) => {
           return (

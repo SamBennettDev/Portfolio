@@ -15,7 +15,7 @@ export function MobileNav() {
   return (
     <>
       <nav
-        className={`flex justify-between items-center mx-[20px] md:hidden`}
+        className={`flex justify-between items-center px-[20px] md:hidden bg-card`}
         style={{ height: `${navbarHeight}px` }}
       >
         <div
@@ -73,8 +73,8 @@ export function MobileNav() {
               className={`flex items-center justify-center w-min text-2xl`}
               onClick={toggleMenu}
             >
-              <div className="font-bold">React</div>
-              <div className="">Essentials</div>
+              <div className="font-bold">Sam</div>
+              <div className="">Bennett</div>
             </Link>
           </div>
 
