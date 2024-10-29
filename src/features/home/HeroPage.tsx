@@ -12,7 +12,7 @@ export const HeroPage = () => {
     <>
       <div
         className="flex justify-center items-center min-h-[400px]"
-        style={{ height: `calc(100vh - ${navbarHeight}px - 100px)` }}
+        style={{ height: `calc(100svh - ${navbarHeight}px - 100px)` }}
       >
         <div className="z-[1] w-full">
           <h1
