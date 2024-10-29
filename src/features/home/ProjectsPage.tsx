@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
 
 export function ProjectsPage() {
   return (
-    <div>
-      <div className="flex flex-wrap w-full gap-5 justify-center">
+    <div className="flex justify-center items-center">
+      <div className="flex flex-wrap w-full md:max-w-[1100px] gap-5 justify-center">
         {projectConfig.map((project) => {
           return (
             <Link
