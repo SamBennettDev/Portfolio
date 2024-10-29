@@ -1,19 +1,20 @@
+import { Button } from "@/components/ui/button";
 import { socialsList } from "@/config/socials";
 import { navbarHeight } from "@/utils/sizes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const PublicHome = () => {
+export const HeroPage = () => {
   const [scrollDialogHovered, setScrollDialogHovered] = useState(false);
 
   return (
     <>
       <div
-        className="flex justify-center items-center relative min-h-[400px]"
-        style={{ height: `calc(100vh - ${navbarHeight}px)` }}
+        className="flex justify-center items-center min-h-[400px]"
+        style={{ height: `calc(100vh - ${navbarHeight}px - 100px)` }}
       >
-        <div className="z-[1] w-full max-w-[720px] px-[1.5rem] md:px-[40px]">
+        <div className="z-[1] w-full">
           <h1
             className="text-center font-sans font-semibold leading-none"
             style={{
@@ -24,21 +25,24 @@ export const PublicHome = () => {
           >
             Hi, I'm Sam Bennett
           </h1>
-          <h2 className="md:text-center mt-[2rem] text-muted-foreground">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu
-            consequat diam. Curabitur tristique est nec porttitor tincidunt.
-            Curabitur luctus turpis dictum turpis euismod consequat. Aenean ac
-            eros efficitur, pulvinar nulla sed, posuere ante.
-          </h2>
+          <p className="md:text-center mt-[2rem] text-muted-foreground">
+            I recently graduated from the University of Utah with a degree in
+            Computer Science. I love diving into challenges and finding
+            creative, efficient solutions—it's a bit of an art for me. Let's
+            build something great together.
+          </p>
           <div className="flex items-center justify-center gap-[20px] mt-[5rem] md:mt-[1.5rem] text-muted-foreground">
             <Link to={"/Contact"}>
-              <button className="hover:bg-primary bg-primary/90 text-card py-[15px] px-[20px] rounded-2xl">
-                Contact Me
-              </button>
+              <Button>Contact Me</Button>
             </Link>
-            <button className="hover:bg-foreground hover:text-card border-[1px] border-foreground/90 text-foreground py-[15px] px-[20px] rounded-2xl">
-              View Resume
-            </button>
+            <Link
+              to={
+                "https://drive.google.com/file/d/1azg4vWEJoqvN3nN3mrCGeGl2wYnkSpVQ/view?usp=drive_link"
+              }
+              target="_blank"
+            >
+              <Button variant={"outline"}>My Resume</Button>
+            </Link>
             {socialsList.map((socialItem) => {
               return (
                 <Link
@@ -47,12 +51,12 @@ export const PublicHome = () => {
                   key={socialItem.title}
                   className="hidden md:block"
                 >
-                  <button className="hover:bg-foreground hover:text-card border-[1px] border-foreground/90 text-foreground w-[54px] h-[54px] rounded-2xl">
+                  <Button variant={"outline"} className="w-[54px] h-[54px]">
                     <FontAwesomeIcon
                       icon={socialItem.icon}
                       className="text-lg"
                     />
-                  </button>
+                  </Button>
                 </Link>
               );
             })}
@@ -90,12 +94,8 @@ export const PublicHome = () => {
             </div>
           </div>
         </Link>
-        <div className="absolute top-0 left-0 w-full h-full bg-card md:rounded-b-[150px] z-[0]"></div>
+        <div className="absolute top-0 left-0 w-full h-[100px] bg-card z-[0]"></div>
       </div>
-      <div
-        className="flex justify-center items-center relative"
-        style={{ height: `calc(100vh - ${navbarHeight}px)` }}
-      ></div>
     </>
   );
 };

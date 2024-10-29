@@ -1,6 +1,6 @@
 import { useAuth } from "./auth";
 
-export const login = (email: string, password: string) => {
+export const login = () => {
   // Modify this to use API call to get user
   const user = {
     id: "1",

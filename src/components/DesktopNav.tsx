@@ -8,7 +8,7 @@ export function DesktopNav() {
 
   return (
     <nav
-      className={`justify-between items-center px-[40px] m-auto hidden md:flex bg-card`}
+      className={`justify-between items-center px-[40px] m-auto hidden md:flex sticky top-0 z-[100] backdrop-blur-md`}
       style={{ height: `${navbarHeight}px` }}
     >
       <div className="flex gap-[10px]">

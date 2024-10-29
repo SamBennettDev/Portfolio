@@ -13,14 +13,14 @@ export function ThemeToggle() {
   };
 
   return (
-    <label className="inline-flex items-center cursor-pointer relative">
+    <label className="inline-flex items-center cursor-pointer relative z-[90]">
       <input
         type="checkbox"
         className="sr-only peer"
         checked={isChecked}
         onChange={toggleTheme}
       />
-      <div className="relative w-14 h-7 bg-background peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-foreground after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-foreground-muted"></div>
+      <div className="relative w-14 h-[30px] border peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-0.5 after:start-[3px] after:bg-foreground after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-foreground-muted"></div>
       <div
         className={`absolute left-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 flex items-center justify-center w-6 h-6 -ml-3 text-foreground ${
           isChecked ? "opacity-100" : "opacity-0"

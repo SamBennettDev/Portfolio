@@ -1,11 +1,9 @@
-import { mainNav } from "@/config/nav-items";
-import { navbarHeight, sideMenuWidth } from "@/utils/sizes";
+import { navbarHeight } from "@/utils/sizes";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggleSwitch";
+import { SideBar } from "./SideBar";
 
 export function MobileNav() {
-  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -13,17 +11,21 @@ export function MobileNav() {
   };
 
   return (
-    <>
-      <nav
-        className={`flex justify-between items-center px-[20px] md:hidden bg-card`}
-        style={{ height: `${navbarHeight}px` }}
+    <nav
+      className={` md:hidden sticky top-0 z-[101] backdrop-blur-md w-full`}
+      style={{ height: `${navbarHeight}px` }}
+    >
+      <SideBar isOpen={isOpen} toggleMenu={toggleMenu} />
+
+      <div
+        className={`flex justify-between items-center px-[20px] h-full ${
+          isOpen ? "" : ""
+        }`}
       >
         <div
-          className={`flex items-center transition-all duration-300 z-[101]`}
+          className={`flex items-center transition-all duration-300`}
           style={{
-            transform: isOpen
-              ? `translateX(${sideMenuWidth}vw)`
-              : "translateX(0)",
+            transform: isOpen ? `translateX(70vw)` : "translateX(0)",
           }}
         >
           {/* Hamburger menu */}
@@ -52,50 +54,14 @@ export function MobileNav() {
           </button>
         </div>
 
-        {/* Theme toggle */}
-        <ThemeToggle />
-      </nav>
-
-      <div
-        className={`absolute h-screen w-screen top-0 left-0 transition-all duration-300 z-[100] bg-gradient-to-r from-card from-80% to-100% ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-        // style={{ width: `${sideMenuWidth}vw` }}
-      >
-        {/* Logo (only visible when menu is open) */}
-        <div className="w-[80%] items-center content-center flex flex-col gap-[20px]">
-          <div
-            className={`flex justify-center items-center w-full px-[20px]`}
-            style={{ height: `${navbarHeight}px` }}
-          >
-            <Link
-              to="/"
-              className={`flex items-center justify-center w-min text-2xl`}
-              onClick={toggleMenu}
-            >
-              <div className="font-bold">Sam</div>
-              <div className="">Bennett</div>
-            </Link>
-          </div>
-
-          {/* Navigation links (only visible when menu is open) */}
-          {mainNav.map((navItem, index) => (
-            <Link
-              key={index}
-              to={navItem.href}
-              className={
-                location.pathname === navItem.href
-                  ? "text-foreground w-min text-xl"
-                  : "text-muted-foreground hover:text-foreground w-min text-xl"
-              }
-              target={navItem.external ? "_blank" : undefined}
-              onClick={toggleMenu}
-            >
-              {navItem.title}
-            </Link>
-          ))}
+        <div
+          className={`transition duration-300  ${
+            isOpen ? "opacity-0" : "opacity-100"
+          }`}
+        >
+          <ThemeToggle />
         </div>
       </div>
-    </>
+    </nav>
   );
 }

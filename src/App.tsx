@@ -3,6 +3,7 @@ import { AppRoutes } from "@/routes";
 import { DesktopNav } from "./components/DesktopNav";
 // import { AppNav } from "./components/AppNav";
 import { MobileNav } from "./components/MobileNav";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <DesktopNav />
       <MobileNav />
       <AppRoutes />
+      <Footer />
       {/* <AppNav /> */}
     </AppProvider>
   );
