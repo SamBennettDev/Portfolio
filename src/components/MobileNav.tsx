@@ -56,7 +56,7 @@ export function MobileNav() {
 
         <div
           className={`transition duration-300  ${
-            isOpen ? "opacity-0" : "opacity-100"
+            isOpen ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}
         >
           <ThemeToggle />
