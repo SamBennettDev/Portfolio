@@ -1,10 +1,14 @@
 import {
-  Agario,
   AlgoSort,
   BetterCanvas,
+  GtAccount,
+  GtAccountSettings,
+  GtAnalytics,
+  GtExercises,
+  GtHome,
+  GtTimer,
   Securaflow,
   Spreadsheet,
-  WorkoutTracker,
 } from "@/assets/images";
 import { Icons } from "@/components/icons";
 
@@ -27,9 +31,10 @@ export const projectConfig = [
         color: "text-pink-500/60",
       },
     ],
-    image: Securaflow,
-    source_code_link: "https://www.SecuraFlow.com",
-    icon: Icons.gitHub,
+    images: [Securaflow],
+    source_code_link:
+      "https://gitlab.com/sambennettdev/securaflow/-/wikis/Securaflow",
+    icon: Icons.gitLab,
   },
   {
     name: "Better Canvas",
@@ -49,21 +54,21 @@ export const projectConfig = [
         color: "text-pink-500/60",
       },
     ],
-    image: BetterCanvas,
+    images: [BetterCanvas],
     source_code_link: "https://github.com/SamBennettDev/better-canvas",
     icon: Icons.gitHub,
   },
   {
-    name: "Workout Tracker",
+    name: "Gains Tracker",
     description:
       "A workout tracker I developed to track store my workout data in a simple and easy to use UI.",
     tags: [
       {
-        name: "JS",
+        name: "TS",
         color: "text-blue-500/60",
       },
       {
-        name: "HTML/CSS",
+        name: "React",
         color: "text-green-500/60",
       },
       {
@@ -71,8 +76,37 @@ export const projectConfig = [
         color: "text-pink-500/60",
       },
     ],
-    image: WorkoutTracker,
+    images: [
+      GtHome,
+      GtExercises,
+      GtAnalytics,
+      GtTimer,
+      GtAccount,
+      GtAccountSettings,
+    ],
     source_code_link: "https://github.com/SamBennettDev/workout-tracker",
+    icon: Icons.gitHub,
+  },
+  {
+    name: "React Essentials",
+    description:
+      "A comprehensive, opinionated starter kit designed to accelerate your React projects by providing a solid foundation with Vite, TypeScript, and Tailwind CSS.",
+    tags: [
+      {
+        name: "TS",
+        color: "text-blue-500/60",
+      },
+      {
+        name: "React",
+        color: "text-green-500/60",
+      },
+      {
+        name: "Tailwind",
+        color: "text-pink-500/60",
+      },
+    ],
+    images: ["./src/assets/images/gt-home.png"],
+    source_code_link: "https://github.com/SamBennettDev/React-Essentials",
     icon: Icons.gitHub,
   },
   {
@@ -93,7 +127,7 @@ export const projectConfig = [
         color: "text-pink-500/60",
       },
     ],
-    image: AlgoSort,
+    images: [AlgoSort],
     source_code_link:
       "https://vimeo.com/manage/videos/831628922?embedded=false&source=video_title&owner=181630258",
     icon: Icons.vimeo,
@@ -116,32 +150,9 @@ export const projectConfig = [
         color: "text-pink-500/60",
       },
     ],
-    image: Spreadsheet,
+    images: [Spreadsheet],
     source_code_link:
       "https://vimeo.com/735094339?embedded=true&source=video_title&owner=181630258",
-    icon: Icons.vimeo,
-  },
-  {
-    name: "Agar.io Clone",
-    description:
-      "This project contains the client code for the agar.io clone under a time restraint of one week. Includes a web server built to communicate between clients and server.",
-    tags: [
-      {
-        name: ".Net",
-        color: "text-blue-500/60",
-      },
-      {
-        name: "Visual Studio",
-        color: "text-green-500/60",
-      },
-      {
-        name: "Windows Forms",
-        color: "text-pink-500/60",
-      },
-    ],
-    image: Agario,
-    source_code_link:
-      "https://vimeo.com/735121765?embedded=true&source=video_title&owner=181630258",
     icon: Icons.vimeo,
   },
 ];
